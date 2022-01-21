@@ -7,18 +7,18 @@ header, .project:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: #2d9c7f;
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: #e0871a;
   text-decoration: underline;
 }
 
 .dollar-amount {
-  color: #056605;
+  color: #31819a;
   font-weight: bold;
   margin-left: -5px;
 }
