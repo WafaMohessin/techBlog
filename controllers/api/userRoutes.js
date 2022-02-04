@@ -48,6 +48,9 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+// Logging out
+
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -55,6 +58,23 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+//Matches/api/users
+
+router.post('/comment', async (req, res) => {
+  try {   
+      
+      const comment = await Comment.create({
+          ...req.body,
+          user_id: req.session.user_id,
+          }
+          );
+      res.status(200).json(comment);
+
+  } catch (err) {
+      res.status(400).json(err);
   }
 });
 
